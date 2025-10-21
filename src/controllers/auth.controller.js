@@ -44,7 +44,8 @@ export const loginController = async (req, res) => {
         const accessToken = generateAccessToken({ id: user._id, email: user.email })
         
         const userData = {
-            email:user.email,accessToken
+            email:user.email,accessToken,
+            role:user.role
         }
 
         return sendResponse(res,200,false,{},{userData,message:"User Login Successfully"})
@@ -53,4 +54,3 @@ export const loginController = async (req, res) => {
           return sendResponse(res, 500, true, { general: error.message }, null);
     }
 }
-

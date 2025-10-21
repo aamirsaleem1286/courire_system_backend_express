@@ -1,6 +1,7 @@
-import shipmentSchema from '../models/shipmentSchema.model.js'
-import {sendResponse} from '../helpers/sendResponse.js'
-import containerModel from '../models/container.model.js'
+import shipmentSchema from '../models/shipmentSchema.model.js';
+import { sendResponse } from '../helpers/sendResponse.js';
+import containerModel from '../models/container.model.js';
+
 export const getTrackingController = async (req, res) => {
   try {
     const { trackingId } = req.params;
@@ -68,14 +69,19 @@ export const getTrackingController = async (req, res) => {
       });
     }
 
+    // 👇 yahan update kiya gaya hai
+    const updatedTracking = {
+      ...foundTrackingId.toObject(),
+      totalWeight: foundTrackingId.totalWeight,
+    };
+
     return sendResponse(res, 200, false, {}, {
-      foundTrackingId,
+      foundTrackingId: updatedTracking, // 👈 totalWeight ab andar hai
       shipmentParts,
-      message: "Tracking ID found successfully"
+      message: "Tracking ID found successfully",
     });
 
   } catch (error) {
     return sendResponse(res, 500, true, { general: error.message }, null);
   }
 };
-

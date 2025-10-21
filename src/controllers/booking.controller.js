@@ -25,7 +25,7 @@ export const addBookingController = async (req, res) => {
 
             ItemDetails,
             OtherDetails,
-
+          totalWeight,
             NoOfPieces,
             Branch,
             BookingDate,
@@ -88,26 +88,22 @@ export const addBookingController = async (req, res) => {
                 SenderIdNumber,
                 SenderAddress,
                 SenderArea,
-    
                 ReceiverName,
                  ReceiverMobile1,
                  ReceiverMobile2,
                 ReceiverAddress,
                 ReceiverArea,
-    
                  ItemDetails,
                  OtherDetails,
-    
+                 totalWeight,
                 NoOfPieces,
                  Branch,
                 BookingDate,
-    
                 Charges,
                 Discount,
                 SubTotal,
                  Vat,
                 VatTotal,
-    
                 AmountInWords,
                 InvoiceTotal,
                 City,
@@ -161,7 +157,7 @@ export const editBookingController = async (req, res) => {
       const {
         BiltyNo, InvoiceNo, SenderName, SenderMobile, SenderIdNumber, SenderAddress, SenderArea,
         ReceiverName, ReceiverMobile1, ReceiverMobile2, ReceiverAddress, ReceiverArea,
-        ItemDetails, OtherDetails,
+        ItemDetails, OtherDetails,totalWeight,
         NoOfPieces, Branch, BookingDate,
         Charges, Discount, SubTotal, Vat, VatTotal,
         AmountInWords, InvoiceTotal,City
@@ -170,7 +166,7 @@ export const editBookingController = async (req, res) => {
       const updateData = {
         BiltyNo, InvoiceNo, SenderName, SenderMobile, SenderIdNumber, SenderAddress, SenderArea,
         ReceiverName, ReceiverMobile1, ReceiverMobile2, ReceiverAddress, ReceiverArea,
-        ItemDetails, OtherDetails,
+        ItemDetails, OtherDetails,totalWeight,
         NoOfPieces, Branch, BookingDate,
         Charges, Discount, SubTotal, Vat, VatTotal,
         AmountInWords, InvoiceTotal,City
